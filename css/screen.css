@@ -1,7 +1,18 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@font-face{
+    font-family: "SourceSansPro";
+    font-weight: 200;
+    font-weight: bold;
+    src: url("D:/Documenten/School/Semester 3/Interaction design/Labo07-dashboard/dashboard-design-CoudronLukas/fonts/SourceSansPro-Bold.ttf") format("ttf");
+}
 
+@font-face{
+    font-family: "SourceSansPro";
+    font-weight: 400;
+    src: url("D:/Documenten/School/Semester 3/Interaction design/Labo07-dashboard/dashboard-design-CoudronLukas/fonts/SourceSansPro-Regular.ttf") format("ttf");
+}
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -14,7 +25,8 @@
     --color-neutral-light: LIGHTSLATEGRAY;
     --color-neutral: SLATEGRAY;
     --color-neutral-dark: DARKSLATEGRAY;
-
+    --color-purple-light: #43425D;
+    --color-purple-dark: #3B3B53;;
     /* Shadows */
 
     /* border radius */
@@ -36,13 +48,20 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'SourceSansPro';
     color: var(--color-neutral-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: white;
+    height: 100%;
 }
+
+a,li{
+    list-style: none;
+    color: inherit; /* blue colors for links too */
+    text-decoration: none; /* no underline */
+}    
 
 *,
 *:before,
@@ -295,6 +314,39 @@ input::placeholder {
     Website main logo
 */
 
+.c-app{
+    display: grid;
+    grid-template-columns: 260px auto;
+    grid-template-rows: 70px 700px;
+}
+
+.c-app__logo{
+    background-color: var(--color-purple-dark); 
+    grid-template-rows: 70px;
+}
+
+.c-app__sidebar{
+    background-color: var(--color-purple-light);    
+    color: antiquewhite;
+    font-weight: 200;
+    margin: 0;
+}
+
+.c-app__topbar{
+
+}
+
+.c-app__main{
+    background-color: #F0F0F7;
+}
+
+.title{
+
+    color: white;
+    font-weight: bold;
+    font-weight: 400;
+    margin: 0;
+}
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
