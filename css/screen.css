@@ -3,7 +3,6 @@
 \*------------------------------------*/
 @font-face{
     font-family: "SourceSansPro";
-    font-weight: 200;
     font-weight: bold;
     src: url("D:/Documenten/School/Semester 3/Interaction design/Labo07-dashboard/dashboard-design-CoudronLukas/fonts/SourceSansPro-Bold.ttf") format("ttf");
 }
@@ -30,10 +29,19 @@
     /* Shadows */
 
     /* border radius */
-
+    /* whitespace */
+    --global-baseline: 5px;
+    --global-whitespace-xxs: var(--global-baseline);
+    --global-whitespace-xs: calc(var(--global-baseline)*2);
+    --global-whitespace-sm: calc(var(--global-baseline)*3);
+    --global-whitespace-md: calc(var(--global-baseline)*4);
+    --global-whitespace-lg: calc(var(--global-baseline)*5);
+    --global-whitespace-xl: calc(var(--global-baseline)*6);
     /* transitions */
     --transition-alpha: .1s;
+    --transition-beta: .3s;
 }
+
 
 /*------------------------------------*\
 #GENERIC
@@ -321,8 +329,14 @@ input::placeholder {
 }
 
 .c-app__logo{
+    color: white;
+    font-weight: bold;
+    padding: 0 var(--global-whitespace-lg);
     background-color: var(--color-purple-dark); 
     grid-template-rows: 70px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .c-app__sidebar{
@@ -347,6 +361,45 @@ input::placeholder {
     font-weight: 400;
     margin: 0;
 }
+
+.c-main-nav__list{
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.c-main-nav__item{
+    margin: var(--global-baseline) 0;
+}
+
+.c-main-nav__link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    line-height: calc(var(--global-baseline)*4);
+    padding: var(--global-whitespace-sm) var(--global-whitespace-lg) var(--global-whitespace-sm) var(--global-whitespace-md);
+    border-left: 5px solid var(--color-alpha);
+    transform: translateX(-5px);
+    width: calc(100% + 5px);
+    transition: all var(--transition-beta);
+}
+
+.c-main-nav__icon{
+    transition: all var(--transition-alpha);
+}
+
+.c-main-nav__link:hover{
+    transition: none var(--transition-alpha);
+}
+
+.c-main-nav__link:hover,
+.c-main-nav__link:focus,
+.is-select .c-main-nav__link{
+    transform: none;
+}
+
+
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
